@@ -36,70 +36,71 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="p-4">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 class="pb-2">Belanja Online</h2>
-          <form class="pt-4 pb-4 border-top border-bottom" method="POST" action="form_belanja.php">
-            <div class="form-group row">
-              <label for="customer" class="col-4 col-form-label">Customer</label>
-              <div class="col-8">
-                <input id="customer" name="customer" placeholder="Nama Customer" type="text" class="form-control">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-4">Pilih Produk</label>
-              <div class="col-8">
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input name="produk" id="produk_0" type="radio" class="custom-control-input" value="TV" required>
-                  <label for="produk_0" class="custom-control-label">TV</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input name="produk" id="produk_1" type="radio" class="custom-control-input" value="Kulkas" required>
-                  <label for="produk_1" class="custom-control-label">KULKAS</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input name="produk" id="produk_2" type="radio" class="custom-control-input" value="Mesin Cuci" required>
-                  <label for="produk_2" class="custom-control-label">MESIN CUCI</label>
+  <div class="container">
+      <div class="p-4">
+        <div class="row">
+          <div class="col-md-8">
+            <h2 class="pb-2">Belanja Online</h2>
+            <form class="pt-4 pb-4 border-top border-bottom" method="POST" action="form_belanja.php">
+              <div class="form-group row">
+                <label for="customer" class="col-4 col-form-label">Customer</label>
+                <div class="col-8">
+                  <input id="customer" name="customer" placeholder="Nama Customer" type="text" class="form-control">
                 </div>
               </div>
-            </div>
-            <div class="form-group row">
-              <label for="jumlah" class="col-4 col-form-label">Jumlah</label>
-              <div class="col-8">
-                <input id="jumlah" name="jumlah" placeholder="Jumlah" type="number" class="form-control" required>
+              <div class="form-group row">
+                <label class="col-4">Pilih Produk</label>
+                <div class="col-8">
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input name="produk" id="produk_0" type="radio" class="custom-control-input" value="TV" required>
+                    <label for="produk_0" class="custom-control-label">TV</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input name="produk" id="produk_1" type="radio" class="custom-control-input" value="Kulkas" required>
+                    <label for="produk_1" class="custom-control-label">KULKAS</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input name="produk" id="produk_2" type="radio" class="custom-control-input" value="Mesin Cuci" required>
+                    <label for="produk_2" class="custom-control-label">MESIN CUCI</label>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="form-group row">
-              <div class="offset-4 col-8">
-                <button name="proses" type="submit" class="btn btn-success">Kirim</button>
+              <div class="form-group row">
+                <label for="jumlah" class="col-4 col-form-label">Jumlah</label>
+                <div class="col-8">
+                  <input id="jumlah" name="jumlah" placeholder="Jumlah" type="number" class="form-control" required>
+                </div>
               </div>
-            </div>
-          </form>
+              <div class="form-group row">
+                <div class="offset-4 col-8">
+                  <button name="proses" type="submit" class="btn btn-success">Kirim</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true">Daftar Harga</li>
+              <li class="list-group-item">TV : 4.200.000</li>
+              <li class="list-group-item">Kulkas : 3.100.000</li>
+              <li class="list-group-item">MESIN CUCI : 3.800.000</li>
+              <li class="list-group-item active" aria-current="true">Harga Dapat Berubah Setiap Saat</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-md-4">
-          <ul class="list-group">
-            <li class="list-group-item active" aria-current="true">Daftar Harga</li>
-            <li class="list-group-item">TV : 4.200.000</li>
-            <li class="list-group-item">Kulkas : 3.100.000</li>
-            <li class="list-group-item">MESIN CUCI : 3.800.000</li>
-            <li class="list-group-item active" aria-current="true">Harga Dapat Berubah Setiap Saat</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row pt-4">
-        <div class="col-md-2">
-          <p>Nama Customer</p>
-          <p>Produk Pilihan</p>
-          <p>Jumlah Beli</p>
-          <p>Total Belanja</p>
-        </div>
-        <div>
-          <p>: <?= $customer ?></p>
-          <p>: <?= $produk ?></p>
-          <p>: <?= $jumlah ?></p>
-          <p>: <?= 'Rp '.strrev(implode('.',str_split(strrev(strval($total_belanja)),3))) ?></p>
+        <div class="row pt-4">
+          <div class="col-md-2">
+            <p>Nama Customer</p>
+            <p>Produk Pilihan</p>
+            <p>Jumlah Beli</p>
+            <p>Total Belanja</p>
+          </div>
+          <div>
+            <p>: <?= $customer ?></p>
+            <p>: <?= $produk ?></p>
+            <p>: <?= $jumlah ?></p>
+            <p>: <?= 'Rp '.strrev(implode('.',str_split(strrev(strval($total_belanja)),3))) ?></p>
+          </div>
         </div>
       </div>
     </div>
