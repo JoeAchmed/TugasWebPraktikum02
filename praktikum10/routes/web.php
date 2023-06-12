@@ -25,3 +25,13 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Routing ke produk
 Route::get('/produk', [ProdukController::class, 'index']);
+// Routing ke form create produk
+Route::get('/produk/create', [ProdukController::class, 'create']);
+// Routing tambah data fungsi store
+Route::post('/produk/store', [ProdukController::class, 'store']);
+// Routing ke form edit produk
+Route::get('/produk/edit/{id}', [ProdukController::class, 'edit']);
+// Routing edit data fungsi update
+Route::put('/produk/update/{id}', [ProdukController::class, 'update']);
+// Routing untuk hapus produk
+Route::get('/produk/delete/{id}', [ProdukController::class, 'destroy']);
